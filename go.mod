@@ -1,4 +1,4 @@
-module github.com/go-kratos/kratos
+module github.com/honlyc/kratos
 
 go 1.13
 
