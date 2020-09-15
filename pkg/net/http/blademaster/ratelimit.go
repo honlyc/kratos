@@ -5,7 +5,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/go-kratos/kratos/pkg/log"
 	limit "github.com/go-kratos/kratos/pkg/ratelimit"
 	"github.com/go-kratos/kratos/pkg/ratelimit/bbr"
 )
@@ -28,7 +27,7 @@ func (b *RateLimiter) printStats(routePath string, limiter limit.Limiter) {
 	now := time.Now().UnixNano()
 	if now-atomic.LoadInt64(&b.logTime) > int64(time.Second*3) {
 		atomic.StoreInt64(&b.logTime, now)
-		log.Info("http.bbr path:%s stat:%+v", routePath, limiter.(*bbr.BBR).Stat())
+		//log.Info("http.bbr path:%s stat:%+v", routePath, limiter.(*bbr.BBR).Stat())
 	}
 }
 
